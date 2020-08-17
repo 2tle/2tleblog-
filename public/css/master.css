@@ -1,0 +1,78 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    font-family: 'Nanum Gothic', sans-serif;
+    
+    color:black;
+}
+
+code {
+    font-family: 'Nanum Gothic Coding', monospace;
+}
+
+body {
+    background: white;
+}
+.latest {
+    padding-top: 1.2em;
+}
+.latest-title {
+    font-weight: 600;
+    font-size : 1.4em;
+}
+
+.err-log {
+    font-size : 1.5em;
+    text-align:center;
+    padding : 2em;
+}
+
+.profileImg {
+    border-radius: 70%;
+    width:30px;
+    height:30px;
+}
+
+.profileD {
+    font-size : .9em;
+    color: gray;
+}
+
+.author-name {
+    color: gray;
+}
+
+.date {
+    color:gray;
+    font-size : .8em;
+}
+
+.title-body-line {
+    padding : .5em;
+}
+
+.comments {
+    padding-left : 2em;
+    padding-right: 2em;
+} 
+.comment-body, .main-content {
+    white-space: pre-line;
+}
+
+.login-group {
+    position:absolute;
+    top:50%; left:50%;
+    transform: translate(-50%, -50%);
+    text-align:center;
+
+}

@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <%- include("../partials/head.ejs"); %>
+    </head>
+    <body>
+        <%- include("../partials/nav.ejs"); %>
+        <div class="container">
+            <div class="latest">
+                <div class="latest-title">
+                    <%= board.title%>
+                </div>
+                <div class="profileD">
+                    <img
+                        src="https://cdn.jsdelivr.net/gh/2tle/staticfiles@master/profile.PNG"
+                        class="profileImg"
+                    />
+                    <span class="author-name"><%= board.author%></span> /
+                    <span class="date"><%= board.board_date%></span>
+                </div>
+            </div>
+            <hr class="title-body-line" />
+            <div class="main-content">
+                <%- board.contents%>
+            </div>
+            <hr class="title-body-line" />
+            <div class="comments">
+                <div class="comments-write">
+                    <input type="text" id="board_id" value="<%=board._id%>" hidden="">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">
+                                닉네임
+                            </span>
+                        </div>
+                        <input
+                            type="text"
+                            class="form-control"
+                            aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default"
+                            id="cauthor"
+                            maxlength="10"
+                        />
+                        <div class="input-group-append">
+                            <button
+                                class="btn btn-outline-secondary"
+                                type="button"
+                                id="button-addon2"
+                                onclick="comment();"
+                            >
+                                작성
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea
+                            class="form-control"
+                            id="comment-body"
+                            placeholder="댓글"
+                            style="resize: none; height: 10vh;"
+                        ></textarea>
+                    </div>
+                </div>
+                <div class="comment-list">
+                    <div class="comment-container">
+                        <table class="table table-borderless" style="border-collapse:collapse'과 'border-spacing:0">
+                            <tbody>
+                                <% if(board.comments !== null) { 
+                                    var comments = board.comments;
+                                    for(var i = 0; i < board.comments.length; i++) {%>
+                                <tr>
+                                    <td rowspan="2">
+                                        <img
+                                            src="<%= comments[i].cauthor_img %>"
+                                            width="50"
+                                            height="50"
+                                            class="d-inline-block align-top"
+                                            loading="lazy"
+                                            style="border-radius: 70%;"
+                                        />
+                                    </td>
+                                    <td><%= comments[i].author %> <span class="date"><%= comments[i].comment_date %></span></td>
+                                </tr>
+                                <tr>
+                                    <td style="word-break:break-all;"><%- comments[i].contents %></td>
+                                </tr>
+                                <% }}%>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%- include('../partials/footer'); %>
+    </body>
+</html>

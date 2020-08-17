@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <%- include('../partials/head.ejs'); %>
+    </head>
+    <body>
+        <%- include('../partials/nav.ejs'); %>
+        <div class="container">
+            <div class="login-group">
+                <div class="lg11">
+                    <div class="imggroup">
+                        <img src="https://cdn.jsdelivr.net/gh/2tle/staticfiles@master/profile.PNG" style="border-radius: 70%; width: 5em; height: 5em;">
+                    </div>
+                    <div class="text1">
+                        2tle's blog
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="username" placeholder="Username">
+                        </div>
+                        
+                        <div class="input-group mb-3">
+                            <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="pwd" placeholder="PW">
+                        </div>
+                        
+                        <button type="button" class="btn btn-sm btn-block btn-outline-secondary" onclick="login();">로그인</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <%- include('../partials/footer.ejs') %>
+    </body>
+</html>

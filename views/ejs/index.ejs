@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <%- include("../partials/head.ejs"); %>
+    </head>
+    <body>
+        <%- include("../partials/nav.ejs"); %>
+        <div class="container">
+            <div class="latest">
+                <div class="latest-title">
+                    최근 게시물
+                </div>
+                <!--최근 게시물 tb -->
+                <table class="table table-hover">
+                    <tbody class="latest-tbody">
+                        <% if (!board) {
+                            for(var i = 0; i < board.length; i++) { %>
+                                <tr><td><%=board[i].category%></td><td><a href="/blog/view/<%= board[i]._id%>"><%=board[i].title%></a></td><td class="text-align:right;"><%=board[i].board_date%></td></tr>
+                        <% }} else { %>
+                            <tr><td>게시글이 없습니다.</td></tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+            <!--footer -->
+            
+        </div>
+        <%- include('../partials/footer'); %>
+        
+    </body>
+</html>

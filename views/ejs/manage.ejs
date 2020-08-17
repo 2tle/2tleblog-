@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <%- include("../partials/head"); %>
+    </head>
+    <body>
+        <%- include("../partials/nav"); %>
+        <div class="container">
+            <div class="latest">
+                <div class="latest-title">
+                    <span>최근 게시물</span>
+                    <span class="pull-right" style="float:right;">
+                        <button type="button" class="btn btn-outline-secondary" onclick="location.href='/manage/write';">글쓰기</button>
+                    </span>
+                </div>
+                <!--최근 게시물 tb -->
+                <table class="table table-hover">
+                    <tbody class="latest-tbody">
+                        <% if (!board) {
+                            for(var i = 0; i < board.length; i++) { %>
+                                <tr>
+                                    <td><%=board[i].category%></td>
+                                    <td><a href="/blog/view/<%= board[i]._id%>"><%=board[i].title%></a></td>
+                                    <td class="text-align:right;"><%=board[i].board_date%></td>
+                                    <td><a href="/manage/edit/<%= board[i]._id%>">EDIT</a></td>
+                                    <td><a href="javascript:void(0);" onclick="del('<%= board[i]._id%>');">DELETE</a></td>
+                                </tr>
+                        <% }} else { %>
+                            <tr><td>게시글이 없습니다.</td></tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <%- include("../partials/footer"); %>
+    </body>
+</html>

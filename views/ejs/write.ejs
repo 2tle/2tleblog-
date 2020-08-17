@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <%- include("../partials/head"); %>
+        <script>
+            window.onload = function() {
+                document.getElementById("title").value = <%- title %>;
+                document.getElementById("category").value = <%- category %>;
+            }
+        </script>
+    </head>
+    <body>
+        <%- include("../partials/nav"); %>
+        <div class="container">
+            <div class="latest">
+                <div class="latest-title">
+                    글 작성 / 수정하기
+                </div>
+                <!--최근 게시물 tb -->
+                <div class="writeForm">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">
+                                제목
+                            </span>
+                        </div>
+                        <input
+                            type="text"
+                            class="form-control"
+                            aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default"
+                            id="title"
+                            maxlength="10"
+                        />
+                        
+                    </div>
+                    
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-default">
+                                카테고리
+                            </span>
+                        </div>
+                        <input
+                            type="text"
+                            class="form-control"
+                            aria-label="Sizing example input"
+                            aria-describedby="inputGroup-sizing-default"
+                            id="category"
+                            maxlength="10"
+                        />
+                        
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea class="form-control" id="w-body" placeholder="글쓰기" style="resize: none; height: 50vh;">
+                            <%- contents_md %>
+                        </textarea>
+                    </div>
+                    
+                    <button type="button" class="btn btn-outline-secondary btn-lg btn-block" onclick="<%= funcName %>">제출</button>
+                </div>
+            </div>
+        </div>
+        <%- include("../partials/footer"); %>
+    </body>
+</html>
